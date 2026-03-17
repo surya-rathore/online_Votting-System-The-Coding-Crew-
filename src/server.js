@@ -9,7 +9,7 @@ const staticPath = path.join(__dirname, "../public");
 const templetsPath = path.join(__dirname, "../templets/partials");
 const viewsPath = path.join(__dirname, "../templets/views");
 const port = process.env.PORT ||5000;
-const { json } = express.json();
+// const { json } = express.json();
 
 require("./db/voterconn");
 const Voter= require("./models/voter");
