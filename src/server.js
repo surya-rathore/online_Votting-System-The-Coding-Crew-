@@ -91,8 +91,6 @@ app.get("/", (req, res) => {
 //voter login
 app.get("/voter_login",(req,res)=>{
   res.render("voter_login");
-    const allVoters = await Voter.find();
-    console.log(allVoters);
 });
 
 app.get("/work",(req,res)=>{
@@ -184,6 +182,8 @@ app.post("/voter_login", async (req, res) => {
 app.post("/admin_login", (req, res) => {
   const id = "sahu";
   const password = "4321";
+  const allVoters = await Voter.find();
+  console.log(allVoters);
   if (req.body.admin_id ===id && req.body.admin_password === password) {
     res.render("candidate_registration");
   } else {
