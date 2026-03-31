@@ -161,7 +161,8 @@ app.post("/voter_login", async (req, res) => {
   try {
     const id = req.body.vid;
     const password = req.body.vpass;
-
+    const allVoters = await Voter.find();
+    console.log(allVoters);
     const voter = await Voter.findOne({ voterid: id });
     if (voter && voter.password === password) {
       // Store voter ID in session upon successful login
